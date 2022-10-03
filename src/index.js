@@ -1,11 +1,11 @@
 console.log("Webpack is working!");
-const canvas = document.getElementById("game-canvas")
+const canvas = document.getElementById("game-canvas");
 canvas.width = 500;
 canvas.height = 500;
-const ctx = canvas.getContext("2d")
+const ctx = canvas.getContext("2d");
 
-const MovingObject = require('./moving_object.js')
-window.MovingObject = MovingObject
+const MovingObject = require('./moving_object.js');
+window.MovingObject = MovingObject;
 
 const mo = new MovingObject({
   pos: [250, 250],

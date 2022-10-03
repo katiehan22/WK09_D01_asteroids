@@ -5,6 +5,7 @@ canvas.height = 500;
 const ctx = canvas.getContext("2d");
 
 const MovingObject = require('./moving_object.js');
+const Asteroid = require('./asteroid.js');
 window.MovingObject = MovingObject;
 
 const mo = new MovingObject({
@@ -17,3 +18,21 @@ const mo = new MovingObject({
 mo.draw(ctx);
 mo.move();
 mo.draw(ctx);
+
+asteroid1 = new Asteroid({
+  pos: [100, 100]
+})
+
+asteroid1.draw(ctx);
+asteroid1.move();
+asteroid1.draw(ctx);
+console.log(asteroid1.vel);
+
+asteroid2 = new Asteroid({
+  pos: [200, 200]
+})
+
+asteroid2.draw(ctx);
+asteroid2.move();
+asteroid2.draw(ctx);
+console.log(asteroid2.vel);

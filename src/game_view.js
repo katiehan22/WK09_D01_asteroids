@@ -6,8 +6,8 @@ function GameView(ctx) {
 }
 
 GameView.prototype.start = function() {
-  setInterval(this.game.draw.bind(this.game, this.ctx), 200);
-  setInterval(this.game.moveObjects.bind(this.game), 200);
+  setInterval(this.game.draw.bind(this.game, this.ctx), 20);
+  setInterval(this.game.moveObjects.bind(this.game), 20);
 }
 
 module.exports = GameView;

@@ -1,7 +1,7 @@
 const Asteroid = require("./asteroid");
 
 function Game (){
-    this.NUM_ASTEROIDS = 2;
+    this.NUM_ASTEROIDS = 10;
     this.asteroids = this.addAsteroids();
     console.log(this.asteroids);
 }
@@ -63,7 +63,8 @@ Game.prototype.checkCollisions = function(){
     for (let i = 0 ; i < this.asteroids.length - 1 ; i++){
         for (let j = i + 1 ; j < this.asteroids.length ; j++){
             if (this.asteroids[i].isCollidedWith(this.asteroids[j]) === true){
-                alert("COLLISION");
+                // alert("COLLISION");
+                this.asteroids[i].collideWith(this.asteroids[j]);
             }
         }
     }
@@ -74,6 +75,9 @@ Game.prototype.step = function(){
     this.checkCollisions();
 }
 
-
+Game.prototype.remove = function(asteroid) {
+    let i = this.asteroids.indexOf(asteroid);
+    this.asteroids.splice(i, 1);
+}
 
 module.exports = Game;
